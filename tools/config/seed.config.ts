@@ -542,7 +542,9 @@ export class SeedConfig {
     base: this.PROJECT_ROOT,
     packageConfigPaths: [
       join('node_modules', '*', 'package.json'),
-      join('node_modules', '@angular', '*', 'package.json')
+      join('node_modules', '@angular', '*', 'package.json'),
+      join('node_modules', '@progress', '*', 'package.json'),
+      join('node_modules', '@telerik', '*', 'package.json')
       // for other modules like @ngx-translate the package.json path needs to updated here
       // otherwise npm run build.prod would fail
       // join('node_modules', '@ngx-translate', '*', 'package.json')

@@ -4,9 +4,12 @@ import { join } from 'path';
 
 import Config from '../../config';
 
-const nodeResolve = require('rollup-plugin-node-resolve');
+const alias = require('rollup-plugin-alias');
 const commonjs = require('rollup-plugin-commonjs');
 const includePaths = require('rollup-plugin-includepaths');
+const nodeResolve = require('rollup-plugin-node-resolve');
+const path = require('path');
+const process = require('process');
 const rollup = require('rollup');
 
 const config = {
@@ -15,6 +18,9 @@ const config = {
   treeshake: true,
   name: 'main',
   plugins: [
+    alias({
+      jszip: path.join(process.cwd(), './node_modules/jszip/dist/jszip.min.js')
+    }),
     includePaths({
       include: {},
       paths: [join(Config.TMP_DIR, 'app')],
