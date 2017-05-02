@@ -96,10 +96,7 @@ export class ProjectConfig extends SeedConfig {
             }.js`
     }));
 
-    let additionalPackages: ExtendPackages[] = [{
-      name: `jszip`,
-      path: `node_modules/jszip/dist/jszip.min.js`
-    }, ...progressPackages, ...telerikPackages];
+    let additionalPackages: ExtendPackages[] = [...progressPackages, ...telerikPackages];
 
     this.addPackagesBundles(additionalPackages);
 

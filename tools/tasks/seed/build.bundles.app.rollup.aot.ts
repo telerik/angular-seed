@@ -18,9 +18,6 @@ const config = {
   treeshake: true,
   name: 'main',
   plugins: [
-    alias({
-      jszip: path.join(process.cwd(), './node_modules/jszip/dist/jszip.min.js')
-    }),
     includePaths({
       include: {},
       paths: [join(Config.TMP_DIR, 'app')],
