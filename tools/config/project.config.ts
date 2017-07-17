@@ -74,31 +74,55 @@ export class ProjectConfig extends SeedConfig {
       'kendo-angular-upload',
       'kendo-charts',
       'kendo-data-query',
+      'kendo-date-math',
       'kendo-drawing',
       'kendo-file-saver',
-      'kendo-intl',
-      'kendo-ooxml'
+      'kendo-ooxml',
+      'kendo-popup-common'
     ].map((name) => ({
       name: `@progress/${name}`,
-      path: `node_modules/@progress/${name}/dist/${
-              /angular-/.test(name) ? ('cdn/js/'+name) : 'npm/main'
-            }.js`
+      path: `node_modules/@progress/${name}`,
+      packageMeta: {
+        main: `dist/npm/main.js`,
+        defaultExtension: 'js'
+      }
     }));
 
     let telerikPackages: ExtendPackages[] = [
+      'kendo-draggable',
       'kendo-dropdowns-common',
-      'kendo-popup-common',
-      'kendo-inputs-common'
+      'kendo-inputs-common',
+      'kendo-intl'
     ].map((name) => ({
       name: `@telerik/${name}`,
-      path: `node_modules/@telerik/${name}/dist/${
-              /angular-/.test(name) ? ('cdn/js/'+name) : 'npm/main'
-            }.js`
+      path: `node_modules/@telerik/${name}`,
+      packageMeta: {
+        main: `dist/npm/main.js`,
+        defaultExtension: 'js'
+      }
     }));
 
     let additionalPackages: ExtendPackages[] = [...progressPackages, ...telerikPackages];
 
     this.addPackagesBundles(additionalPackages);
+
+    this.addPackagesBundles([{
+      name: 'jszip',
+      path: 'node_modules/jszip',
+      packageMeta: {
+        main: `dist/jszip.js`,
+        defaultExtension: 'js'
+      }
+    }]);
+
+    this.addPackagesBundles([{
+      name: 'tslib',
+      path: 'node_modules/tslib',
+      packageMeta: {
+        main: `tslib.js`,
+        defaultExtension: 'js'
+      }
+    }]);
 
     /* Add proxy middleware */
     // this.PROXY_MIDDLEWARE = [
