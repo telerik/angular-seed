@@ -40,6 +40,7 @@ export class ProjectConfig extends SeedConfig {
     ];
 
     this.ROLLUP_NAMED_EXPORTS = [
+      {'node_modules/pako/dist/pako_deflate.js': [ 'deflate' ]},
       ...this.ROLLUP_NAMED_EXPORTS,
       //{'node_modules/immutable/dist/immutable.js': [ 'Map' ]},
     ];
@@ -67,6 +68,7 @@ export class ProjectConfig extends SeedConfig {
       'kendo-angular-l10n',
       'kendo-angular-label',
       'kendo-angular-layout',
+      'kendo-angular-pdf-export',
       'kendo-angular-popup',
       'kendo-angular-resize-sensor',
       'kendo-angular-scrollview',
@@ -120,6 +122,15 @@ export class ProjectConfig extends SeedConfig {
       path: 'node_modules/tslib',
       packageMeta: {
         main: `tslib.js`,
+        defaultExtension: 'js'
+      }
+    }]);
+
+    this.addPackagesBundles([{
+      name: 'pako',
+      path: 'node_modules/pako',
+      packageMeta: {
+        main: `index.js`,
         defaultExtension: 'js'
       }
     }]);
