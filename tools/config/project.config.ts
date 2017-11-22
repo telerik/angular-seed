@@ -55,7 +55,7 @@ export class ProjectConfig extends SeedConfig {
     // this.addPackagesBundles(additionalPackages);
 
     // Add Kendo UI for Angular packages
-    let progressPackages: ExtendPackages[] = [
+    const progressPackages: ExtendPackages[] = [
       'kendo-angular-buttons',
       'kendo-angular-charts',
       'kendo-angular-dateinputs',
@@ -90,7 +90,7 @@ export class ProjectConfig extends SeedConfig {
       }
     }));
 
-    let telerikPackages: ExtendPackages[] = [
+    const telerikPackages: ExtendPackages[] = [
       'kendo-draggable',
       'kendo-dropdowns-common',
       'kendo-inputs-common',
@@ -104,7 +104,7 @@ export class ProjectConfig extends SeedConfig {
       }
     }));
 
-    let additionalPackages: ExtendPackages[] = [...progressPackages, ...telerikPackages];
+    const additionalPackages: ExtendPackages[] = [...progressPackages, ...telerikPackages];
 
     this.addPackagesBundles(additionalPackages);
 
