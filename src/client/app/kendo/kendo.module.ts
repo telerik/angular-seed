@@ -6,12 +6,14 @@ import { KendoComponent } from './kendo.component';
 import { KendoRoutingModule } from './kendo-routing.module';
 
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { GridModule } from '@progress/kendo-angular-grid';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     ButtonsModule,
+    GridModule,
     KendoRoutingModule
   ],
   declarations: [ KendoComponent ],
