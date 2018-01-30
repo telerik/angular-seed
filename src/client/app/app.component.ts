@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Config } from './shared/config/env.config';
-import './operators';
-
-import { Subject } from "rxjs/Subject";
+import { Subject } from 'rxjs/Subject';
 
 
 /**
