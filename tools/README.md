@@ -38,7 +38,6 @@ The seed provides the following tasks:
 | :----------------------------------- | :---------- |
 | `build.assets.dev.ts`                | Copies the assets (located in `src/client/assets`) over to the `dist/dev/assets` directory |
 | `build.assets.prod.ts`               | Copies the assets (located in `src/client/assets`) over to the `dist/prod/assets` directory |
-| `build.bundle.rxjs.ts`               | Bundles the RxJS lib using the SystemJS Builder |
 | `build.bundles.app.aot.ts`           | Bundles the JavaScript files using the SystemJS Builder with AoT |
 | `build.bundles.app.rollup.aot.ts`    | Bundles the JavaScript files using the SystemJS Builder with Roolup and AoT |
 | `build.bundles.app.ts`               | Bundles the JavaScript files using the SystemJS Builder |
@@ -67,7 +66,7 @@ The seed provides the following tasks:
 | `compile.ahead.prod.ts`              | Compile bundles with AoT |
 | `copy.prod.rollup.aot.ts`            | Copies all TypeScript files (excluding specs and e2e specs) over to the `/tmp` dir before AoT, Rollup compilation |
 | `copy.prod.ts`                       | Copies all TypeScript files (excluding specs and e2e specs) over to the `/tmp` dir |
-| `e2e.ts`                             | Runs all e2e specs using `protractor` |
+| `e2e.ts`                             | Runs all e2e specs using `cypress` |
 | `generate.manifest.ts`               | Generates a `manifest` file for the application |
 | `i18n.build.ts`                      | Run sequence of tasks `clean.prod`, `copy.prod` and `build.html_css` |
 | `i18n.merge.ts`                      | Add `i18n` translation in to the files  |
@@ -92,7 +91,6 @@ The seed provides the following tasks:
 | `watch.dev.ts`                       | Watches for code changes and rebuilds the files in `/dist/dev` |
 | `watch.e2e.ts`                       | Watches for code changes and rebuilds the files in `/dist/e2e` |
 | `watch.test.ts`                      | Watches for code changes and rebuilds the files in `/dist/test` |
-| `webdriver.ts`                       | Installs the Selenium webdriver used for the Protractor e2e specs |
 
 ## Utilities
 
