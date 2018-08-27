@@ -17,6 +17,7 @@ module.exports = () => {
     'paths': {
       'n:*': 'node_modules/*',
       'rxjs/*': 'node_modules/rxjs/*.js',
+      'rxjs-compat/*': 'node_modules/rxjs-compat/*.js',
       'rxjs/internal-compatibility': 'node_modules/rxjs/internal-compatibility/index.js',
       'rxjs/testing': 'node_modules/rxjs/testing/index.js',
       'rxjs/ajax': 'node_modules/rxjs/ajax/index.js',
@@ -24,10 +25,12 @@ module.exports = () => {
       'rxjs/webSocket': 'node_modules/rxjs/webSocket/index.js',
     },
     'map': {
-      'rxjs': 'n:rxjs'
+      'rxjs': 'n:rxjs',
+      'rxjs-compat': 'n:rxjs-compat'
     },
     'packages': {
-      'rxjs': { 'main': 'index.js',  'defaultExtension': 'js' }
+      'rxjs': { 'main': 'index.js',  'defaultExtension': 'js' },
+      'rxjs-compat': { main: 'index.js', defaultExtension: 'js' }
     }
   });
   return builder.bundle('rxjs/index.js + ' +
@@ -35,7 +38,9 @@ module.exports = () => {
   'rxjs/internal-compatibility/index.js + ' +
   'rxjs/testing/index.js + ' +
   'rxjs/ajax/index.js + ' +
-  'rxjs/webSocket/index.js',
+  'rxjs/webSocket/index.js + ' +
+  'rxjs/Rx',
+  'rxjs-compat/index.js',
   'node_modules/.tmp/Rx.min.js', options)
     .then((output: any) => {
       const writeFile = promisify(fs.writeFile);

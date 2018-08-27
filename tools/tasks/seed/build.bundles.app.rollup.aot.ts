@@ -7,7 +7,6 @@ const alias = require('rollup-plugin-alias');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const includePaths = require('rollup-plugin-includepaths');
-const nodeResolve = require('rollup-plugin-node-resolve');
 const path = require('path');
 const process = require('process');
 const rollup = require('rollup');
